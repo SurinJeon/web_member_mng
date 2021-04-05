@@ -15,7 +15,7 @@ select id, passwd, name, age, gender, email from member where id = 3 and passwd 
 
 select id, passwd, name, age, gender, email from member;
 
-delete from member where id = '4';
+delete from member where id = '5';
 
 
 update member set id = '2', passwd = password('1111'), name = '짱짱짱수린', age = 54, gender = '여자', email = 'surin@test.co.kr' where id = '2';

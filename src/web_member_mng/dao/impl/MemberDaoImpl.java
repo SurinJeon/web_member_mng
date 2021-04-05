@@ -124,17 +124,16 @@ public class MemberDaoImpl implements MemberDao {
 
 	public int updateMember(Member member) {
 		String sql = "update member"
-				+ " set id = ?, passwd = password(?), name = ?, age = ?, gender = ?, email = ?"
+				+ " set id = ?, name = ?, age = ?, gender = ?, email = ?"
 				+ " where id = ?";
 		
 		try(PreparedStatement pstmt = con.prepareStatement(sql);){
 			pstmt.setString(1, member.getId());
-			pstmt.setString(2, member.getPasswd());
-			pstmt.setString(3, member.getName());
-			pstmt.setInt(4, member.getAge());
-			pstmt.setString(5, member.getGender());
-			pstmt.setString(6, member.getEmail());
-			pstmt.setString(7, member.getId());
+			pstmt.setString(2, member.getName());
+			pstmt.setInt(3, member.getAge());
+			pstmt.setString(4, member.getGender());
+			pstmt.setString(5, member.getEmail());
+			pstmt.setString(6, member.getId());
 			
 			return pstmt.executeUpdate();
 		} catch (SQLException e) {
